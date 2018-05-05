@@ -1,1 +1,0 @@
-This config file provides an example of accing CSS selections to tinyMCE edit boxes
