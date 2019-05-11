@@ -67,7 +67,9 @@ class ThemeOptions {
 		 * Options types are the same for plugins and themes.
 		 */
 		$options = array(
-				/* Radio buttons */
+				/* 
+				 * Radio buttons 
+				 */
 				gettext('Radio buttons option') => array(// The Title of your option that can be translated
 						'key' => 'demo_theme_radiobuttons', // the real name of the option that is stored in the database.
 						// Good practice is to name these like yourdemoplugin_optionname
@@ -75,42 +77,60 @@ class ThemeOptions {
 						'order' => 7, // the order position the option should have on the plugin option
 						'buttons' => array(// The definition of the radio buttons to choose from and their values.
 								//You can of course have more than three.
-								gettext('Suboption 1-a') => 'suboption1-a',
-								gettext('Suboption 1-b') => 'suboption1-b',
-								gettext('Suboption 1-c') => 'suboption1-c'
+								gettext('Suboption 1-a') => 'value-to-store',
+								gettext('Suboption 1-b') => 'value-to-store',
+								gettext('Suboption 1-c') => 'value-to-store'
 						),
 						'desc' => gettext('Description')
 				), // The description of the option
 
-				/* Checkbox list as an array */
+				/*
+				 * Checkbox list as an array 
+				 * 
+				 * Note that the checkboxes are individual boolean options themselves that only store 0 and 1.
+				 * Therefore it is recommend to name the options accordingly. 
+				 * 
+				 * In code you don't check the main option (key) but these individual options themselves
+				 */
 				gettext('Checkbox array list option') => array(
 						'key' => 'demo_theme_checkbox_array',
 						'type' => OPTION_TYPE_CHECKBOX_ARRAY,
 						'order' => 0,
-						'checkboxes' => array(// The definition of the checkboxes
-								gettext('Suboption 2-a') => 'suboption2-a',
-								gettext('Suboption 2-b') => 'suboption2-b',
-								gettext('Suboption 2-c') => 'suboption2-c'
+						'checkboxes' => array(// The definition of the checkboxes which are actually individual boolean suboptions 
+								gettext('Suboption 2-a') => 'demo_theme_checkbox_array-suboption2-a', // this is the option db name, not the value!
+								gettext('Suboption 2-b') => 'demo_theme_checkbox_array-suboption2-b',
+								gettext('Suboption 2-c') => 'demo_theme_checkbox_array-suboption2-c'
 						),
 						'desc' => gettext('Description')),
-				/* Checkbox list as an unordered html list */
+				/* 
+				 * Checkbox list as an unordered html list
+				 * 
+				 * Note that the checkboxes are individual boolean options themselves that only store 0 and 1.
+				 * Therefore it is recommend to name the options accordingly. 
+				 * 
+				 * In code you don't check the main option (key) but these individual options themselves
+				 */
 				gettext('Checkbox list') => array(
 						'key' => 'demo_theme_checkbox_list',
 						'type' => OPTION_TYPE_CHECKBOX_UL,
 						'order' => 0,
-						'checkboxes' => array(// The definition of the checkboxes
-								gettext('Suboption 3-a') => 'suboption3-a',
-								gettext('Suboption 3-b') => 'suboption3-b',
-								gettext('Suboption 3-c') => 'suboption3-c'
+						'checkboxes' => array(// The definition of the checkboxes which are actually individual boolean suboptions 
+								gettext('Suboption 3-a') => 'demo_theme_checkbox_list-suboption3-a', // this is the option db name, not the value!
+								gettext('Suboption 3-b') => 'demo_theme_checkbox_list-suboption3-b',
+								gettext('Suboption 3-c') => 'demo_theme_checkbox_list-suboption3-c'
 						),
 						'desc' => gettext('Description')),
-				/* One checkbox only option - This example is a general theme option */
+				/* 
+				 * One checkbox only option - This example is a general theme option 
+				 */
 				gettext('Allow search') => array(
 						'key' => 'Allow_search',
 						'type' => OPTION_TYPE_CHECKBOX,
 						'order' => 2,
 						'desc' => gettext('Check to enable search form.')),
-				/* Input text field option */
+				/* 
+				 * Input text field option 
+				 */
 				gettext('Input text field option') => array(
 						'key' => 'demo_theme_textbox',
 						'type' => OPTION_TYPE_TEXTBOX,
@@ -118,19 +138,25 @@ class ThemeOptions {
 						//Then there will be one input field per enabled language.
 						'order' => 9,
 						'desc' => gettext('Description')),
-				/* Password input field option */
+				/* 
+				 * Password input field option 
+				 */
 				gettext('Password input field option') => array(
 						'key' => 'demo_theme_input_password',
 						'type' => OPTION_TYPE_PASSWORD,
 						'order' => 9,
 						'desc' => gettext('Description')),
-				/* Cleartext option */
+				/* 
+				 * Cleartext option 
+				 */
 				gettext('Cleartext input field option') => array(
 						'key' => 'demo_theme_input_cleartext',
 						'type' => OPTION_TYPE_CLEARTEXT,
 						'order' => 9,
 						'desc' => gettext('Description')),
-				/* Textareafield option */
+				/* 
+				 * Textareafield option 
+				 */
 				gettext('Textarea field option') => array(
 						'key' => 'demo_theme_textarea',
 						'type' => OPTION_TYPE_TEXTAREA,
@@ -139,24 +165,30 @@ class ThemeOptions {
 						//in that mode. Then there will be one textarea per enabled language.
 						'order' => 9,
 						'desc' => gettext('Description')),
-				/* Dropdown selector option */
+				/* 
+				 * Dropdown selector option 
+				 */
 				gettext('Dropdown selector option') => array(
 						'key' => 'demo_theme_selector',
 						'type' => OPTION_TYPE_SELECTOR,
 						'order' => 1,
 						'selections' => array(// The definition of the selector values. You can of course have more than three.
-								gettext('Suboption1') => 'suboption1',
-								gettext('Suboption2') => 'suboption2',
-								gettext('Suboption3') => 'suboption3'
+								gettext('Suboption1') => 'value-to-store',
+								gettext('Suboption2') => 'value-to-store',
+								gettext('Suboption3') => 'value-to-store'
 						),
 						'null_selection' => gettext('Disabled'), // Provides a NULL value to select to the above selections
 						'desc' => gettext('Description.')),
-				/* jQuery color picker option */
+				/* 
+				 * jQuery color picker option 
+				 */
 				gettext('jQuery color picker option') => array(
 						'key' => 'demo_theme_colorpicker',
 						'type' => OPTION_TYPE_COLOR_PICKER,
 						'desc' => gettext('Description')),
-				/* Custom option if none of the above standard ones fit your purpose. You define what to do and show within the method handleOption() below */
+				/* 
+				 * Custom option if none of the above standard ones fit your purpose. You define what to do and show within the method handleOption() below 
+				 */
 				gettext('Theme colors') => array(
 						'key' => 'demoTheme_colors',
 						'type' => OPTION_TYPE_CUSTOM,
@@ -164,8 +196,9 @@ class ThemeOptions {
 		);
 
 		/*
-		  Sometimes you might want to put out notes for example if someone tries to run the plugin but its server lacks support.
-		  Then there is an option type for notes only. You can add them like this: */
+		 * Sometimes you might want to put out notes for example if someone tries to run the plugin but its server lacks support.
+		 * Then there is an option type for notes only. You can add them like this: 
+		 */
 		if (!getOption('zp_theme_demo_theme')) { // whatever you need to check (in this case that the plugin is enabled)
 			$options['note'] = array(
 					'key' => 'demotheme_note',
