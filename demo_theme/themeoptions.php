@@ -8,7 +8,7 @@
  *
  */
 /*
- * This is optional and here required because of the usage of the function generateListFromArray() within handleOption() below
+ * This is optional and here required because of the usage of the function generateListFromArray() within handleOption() below.
  */
 require_once(dirname(__FILE__) . '/functions.php');
 
@@ -19,7 +19,7 @@ class ThemeOptions {
 
 	/**
 	 * Here you set default values of your options.
-	 * The options here an an example of the default theme
+	 * The options here an an example of the default theme.
 	 */
 	function __construct() {
 		setThemeOptionDefault('Allow_search', true);
@@ -37,7 +37,7 @@ class ThemeOptions {
 		setThemeOptionDefault('thumb_transition', 1);
 
 		/*
-		 * You can of course also set other options if your theme requires this.
+		 * You can also set other options if your theme requires this.
 		 * This example enables the colorbox plugin if it is used for the theme pages noted.
 		 */
 		setOptionDefault('colorbox_default_album', 1);
@@ -45,9 +45,9 @@ class ThemeOptions {
 		setOptionDefault('colorbox_default_search', 1);
 
 		/*
-		 * This is adds support for the cache manager so you can pre-cache your thumbs and other sized images as defined.
+		 * This adds support for the cache manager so you can pre-cache your thumbs and other sized images as defined.
 		 * Zenphoto generally does this on the fly when needed but on very slow servers or if you have really a lot of images that also are quite big
-		 * it might be necessary to do this.
+		 * it may be necessary to do this.
 		 */
 		if (class_exists('cacheManager')) {
 			cacheManager::deleteThemeCacheSizes('default');
@@ -63,18 +63,18 @@ class ThemeOptions {
 	 */
 	function getOptionsSupported() {
 		/*
-		 * The option definitions are stored in a multidimensional array. There are several predefine option types.
-		 * Options types are the same for plugins and themes.
+		 * The option definitions are stored in a multidimensional array. There are several predefined option types.
+		 * Option types are the same for plugins and themes.
 		 */
 		$options = array(
 				/* 
 				 * Radio buttons 
 				 */
-				gettext('Radio buttons option') => array(// The Title of your option that can be translated
-						'key' => 'demo_theme_radiobuttons', // the real name of the option that is stored in the database.
-						// Good practice is to name these like yourdemoplugin_optionname
-						'type' => OPTION_TYPE_RADIO, // this is generates an option interface for radio buttons
-						'order' => 7, // the order position the option should have on the plugin option
+				gettext('Radio buttons option') => array(// The Title of your option that can be translated.
+						'key' => 'demo_theme_radiobuttons', // The real name of the option that is stored in the database.
+						// Good practice is to name these like yourdemoplugin_optionname.
+						'type' => OPTION_TYPE_RADIO, // This generates an option interface for radio buttons.
+						'order' => 7, // The order position the option should have on the plugin options.
 						'buttons' => array(// The definition of the radio buttons to choose from and their values.
 								//You can of course have more than three.
 								gettext('Suboption 1-a') => 'value-to-store',
@@ -82,21 +82,21 @@ class ThemeOptions {
 								gettext('Suboption 1-c') => 'value-to-store'
 						),
 						'desc' => gettext('Description')
-				), // The description of the option
+				), // The description of the option.
 
 				/*
 				 * Checkbox list as an array 
 				 * 
 				 * Note that the checkboxes are individual boolean options themselves that only store 0 and 1.
-				 * Therefore it is recommend to name the options accordingly. 
+				 * Therefore it is recommended to name the options accordingly. 
 				 * 
-				 * In code you don't check the main option (key) but these individual options themselves
+				 * In code you don't check the main option (key) but these individual options themselves.
 				 */
 				gettext('Checkbox array list option') => array(
 						'key' => 'demo_theme_checkbox_array',
 						'type' => OPTION_TYPE_CHECKBOX_ARRAY,
 						'order' => 0,
-						'checkboxes' => array(// The definition of the checkboxes which are actually individual boolean suboptions 
+						'checkboxes' => array(// The definition of the checkboxes which are actually individual boolean suboptions. 
 								gettext('Suboption 2-a') => 'demo_theme_checkbox_array-suboption2-a', // this is the option db name, not the value!
 								gettext('Suboption 2-b') => 'demo_theme_checkbox_array-suboption2-b',
 								gettext('Suboption 2-c') => 'demo_theme_checkbox_array-suboption2-c'
@@ -106,22 +106,22 @@ class ThemeOptions {
 				 * Checkbox list as an unordered html list
 				 * 
 				 * Note that the checkboxes are individual boolean options themselves that only store 0 and 1.
-				 * Therefore it is recommend to name the options accordingly. 
+				 * Therefore it is recommended to name the options accordingly. 
 				 * 
-				 * In code you don't check the main option (key) but these individual options themselves
+				 * In code you don't check the main option (key) but these individual options themselves.
 				 */
 				gettext('Checkbox list') => array(
 						'key' => 'demo_theme_checkbox_list',
 						'type' => OPTION_TYPE_CHECKBOX_UL,
 						'order' => 0,
-						'checkboxes' => array(// The definition of the checkboxes which are actually individual boolean suboptions 
+						'checkboxes' => array(// The definition of the checkboxes which are actually individual boolean suboptions. 
 								gettext('Suboption 3-a') => 'demo_theme_checkbox_list-suboption3-a', // this is the option db name, not the value!
 								gettext('Suboption 3-b') => 'demo_theme_checkbox_list-suboption3-b',
 								gettext('Suboption 3-c') => 'demo_theme_checkbox_list-suboption3-c'
 						),
 						'desc' => gettext('Description')),
 				/* 
-				 * One checkbox only option - This example is a general theme option 
+				 * One checkbox option only - This example is a general theme option 
 				 */
 				gettext('Allow search') => array(
 						'key' => 'Allow_search',
@@ -160,8 +160,8 @@ class ThemeOptions {
 				gettext('Textarea field option') => array(
 						'key' => 'demo_theme_textarea',
 						'type' => OPTION_TYPE_TEXTAREA,
-						'texteditor' => 1, // optional to enable the visual editor TinyMCE on this field
-						'multilingual' => 1, // optional if the field should be multilingual if Zenphoto is run
+						'texteditor' => 1, // Optional: to enable the visual editor TinyMCE on this field.
+						'multilingual' => 1, // Optional: if the field should be multilingual if Zenphoto is run
 						//in that mode. Then there will be one textarea per enabled language.
 						'order' => 9,
 						'desc' => gettext('Description')),
@@ -177,7 +177,7 @@ class ThemeOptions {
 								gettext('Suboption2') => 'value-to-store',
 								gettext('Suboption3') => 'value-to-store'
 						),
-						'null_selection' => gettext('Disabled'), // Provides a NULL value to select to the above selections
+						'null_selection' => gettext('Disabled'), // Provides a NULL value to select to the above selections.
 						'desc' => gettext('Description.')),
 				/* 
 				 * jQuery color picker option 
@@ -187,7 +187,7 @@ class ThemeOptions {
 						'type' => OPTION_TYPE_COLOR_PICKER,
 						'desc' => gettext('Description')),
 				/* 
-				 * Custom option if none of the above standard ones fit your purpose. You define what to do and show within the method handleOption() below 
+				 * Custom option if none of the above standard ones fit your purpose. You define what to do and show within the method handleOption() below.
 				 */
 				gettext('Theme colors') => array(
 						'key' => 'demoTheme_colors',
@@ -196,7 +196,7 @@ class ThemeOptions {
 		);
 
 		/*
-		 * Sometimes you might want to put out notes for example if someone tries to run the plugin but its server lacks support.
+		 * Sometimes you may want to print notes, for example if someone tries to run the plugin but its server lacks support.
 		 * Then there is an option type for notes only. You can add them like this: 
 		 */
 		if (!getOption('zp_theme_demo_theme')) { // whatever you need to check (in this case that the plugin is enabled)
@@ -205,14 +205,14 @@ class ThemeOptions {
 					'type' => OPTION_TYPE_NOTE,
 					'order' => 25,
 					'desc' => gettext('<p class="notebox">Sometimes you might want to put out notes for example this version of the demo theme expects that the <strong>adminToolbox</strong> is inserted via the <code>theme_body_close</code> <em>filter</em>.
-																Then there is an option type for notes only</p>') // the class 'notebox' is a standard class for styling notes on the backend, there is also 'errorbox' for errors. Of cours
+																Then there is an option type for notes only</p>') // the class 'notebox' is a standard class for styling notes on the backend, there is also 'errorbox' for errors.
 			);
 		}
 		return $options;
 	}
 
 	/**
-	 * If your theme for example uses specific image sizes for layout reasons you can disable the standard image size options here
+	 * If your theme uses specific image sizes for layout reasons you can disable the standard image size options here.
 	 */
 	function getOptionsDisabled() {
 		return array('custom_index_page', 'image_size');
