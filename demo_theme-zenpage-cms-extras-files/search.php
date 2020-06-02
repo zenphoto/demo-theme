@@ -73,10 +73,8 @@ if (!defined('WEBPATH'))
 				$number_to_show = 5;
 				$c = 0;
 				printf(gettext('Pages (%s)'), $numpages);
-				printZDSearchShowMoreLink('pages', $number_to_show);
 				while (next_page()) {
 					$c++;
-					printZDToggleClass('pages', $c, $number_to_show);
 					printPageTitlelink();
 					shortenContent(strip_tags(getPageContent()), 80, getOption('zenpage_textshorten_indicator'));
 				}
@@ -85,7 +83,6 @@ if (!defined('WEBPATH'))
 				$number_to_show = 5;
 				$c = 0;
 				printf(gettext('Articles (%s)'), $numnews);
-				printZDSearchShowMoreLink('news', $number_to_show);
 				while (next_news()) {
 					printNewsTitleLink();
 					echo shortenContent(strip_tags(getNewsContent()), 80, getOption('zenpage_textshorten_indicator'));
