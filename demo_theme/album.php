@@ -24,8 +24,8 @@ if (!defined('WEBPATH'))
 		?>
 		<?php printAlbumDesc(); ?>
 <?php while (next_album()): // the loop of the sub albums within the album  ?>
-			<a href="<?php echo html_encode(getAlbumLinkURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getAnnotatedAlbumTitle(); ?>"><?php printAlbumThumbImage(getAnnotatedAlbumTitle()); ?></a>
-			<a href="<?php echo html_encode(getAlbumLinkURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getAnnotatedAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a>
+			<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getAnnotatedAlbumTitle(); ?>"><?php printAlbumThumbImage(getAnnotatedAlbumTitle()); ?></a>
+			<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getAnnotatedAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a>
 			<?php printAlbumDate(""); ?>
 			<?php printAlbumDesc(); // the album description?>
 			<?php
@@ -36,7 +36,7 @@ if (!defined('WEBPATH'))
 			?> 
 		<?php endwhile; ?>
 		<?php while (next_image()): // the loop of the image within the album  ?>
-			<a href="<?php echo html_encode(getImageLinkURL()); ?>" title="<?php echo getBareImageTitle(); ?>"><?php printImageThumb(getAnnotatedImageTitle()); ?></a>
+			<a href="<?php echo html_encode(getImageURL()); ?>" title="<?php echo getBareImageTitle(); ?>"><?php printImageThumb(getAnnotatedImageTitle()); ?></a>
 			<?php
 			// Optional support for the favoritse plugin 
 			if (function_exists('printAddToFavorites')) {

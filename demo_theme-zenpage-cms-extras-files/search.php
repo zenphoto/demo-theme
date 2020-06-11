@@ -105,8 +105,8 @@ if (!defined('WEBPATH'))
 		if (getNumAlbums() != 0) {
 			while (next_album()):
 				?>
-				<a href="<?php echo html_encode(getAlbumLinkURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getBareAlbumTitle(); ?>"><?php printCustomAlbumThumbImage(getBareAlbumTitle(), NULL, 95, 95, 95, 95); ?></a>
-				<a href="<?php echo html_encode(getAlbumLinkURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a>
+				<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getBareAlbumTitle(); ?>"><?php printCustomAlbumThumbImage(getBareAlbumTitle(), NULL, 95, 95, 95, 95); ?></a>
+				<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php echo getBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a>
 				<?php
 				printAlbumDate("");
 				echo truncate_string(getAlbumDesc(), 45);
@@ -115,7 +115,7 @@ if (!defined('WEBPATH'))
 		if (getNumImages() > 0) {
 			while (next_image()) {
 				?>
-				<a href="<?php echo html_encode(getImageLinkURL()); ?>" title="<?php echo getBareImageTitle(); ?>"><?php printImageThumb(getBareImageTitle()); ?></a>
+				<a href="<?php echo html_encode(getImageURL()); ?>" title="<?php echo getBareImageTitle(); ?>"><?php printImageThumb(getBareImageTitle()); ?></a>
 				<?php
 			}
 		}
