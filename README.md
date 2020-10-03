@@ -15,6 +15,6 @@ Note that this demo theme is not setup for a theme based translation.
 
 ### demo_theme-zenpage-cms-extras-files
 
-These are extra theme files/pages a theme needs to provide support for the [Zenpage CMS plugin](http://www.zenphoto.org/news/zenpage-a-cms-plugin-for-zenphoto/  and its news articles (blog) and pages management capabilities.
+These are extra theme files/pages a theme needs to provide support for the [Zenpage CMS plugin](http://www.zenphoto.org/news/zenpage-a-cms-plugin-for-zenphoto/)  and its news articles (blog) and pages management capabilities.
 
-The `search.php` page is an extended one for returning news article and page results and needes to replace the version from the "basic files".
+The `search.php` page is an extended one for returning news article and page results and needed to replace the version from the "basic files".
