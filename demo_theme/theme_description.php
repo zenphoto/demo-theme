@@ -30,6 +30,7 @@ $theme_description['desc'] = gettext('Short description of your theme');
 
 /*
  * OPTIONAL: If the theme itself specifially (or some of its functionality) is deprecated note this here. It will be displayed on the backend (since 1.5.8b)
+ * From ZenphotoCMS 1.6 on you can leave it empty or set it to true to get a default message. Don't set this at all if it is not deprecated.
  */
 $theme_description['deprecated'] = gettext('Some message'); 
 
