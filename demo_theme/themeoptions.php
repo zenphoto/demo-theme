@@ -74,7 +74,7 @@ class ThemeOptions {
 						'key' => 'demo_theme_radiobuttons', // The real name of the option that is stored in the database.
 						// Good practice is to name these like yourdemoplugin_optionname.
 						'type' => OPTION_TYPE_RADIO, // This generates an option interface for radio buttons.
-						'order' => 7, // The order position the option should have on the plugin options.
+						'order' => 7, // OPTIONAL: It is recommended to just define the array in the order intended
 						'buttons' => array(// The definition of the radio buttons to choose from and their values.
 								//You can of course have more than three.
 								gettext('Suboption 1-a') => 'value-to-store',
@@ -95,7 +95,6 @@ class ThemeOptions {
 				gettext('Checkbox array list option') => array(
 						'key' => 'demo_theme_checkbox_array',
 						'type' => OPTION_TYPE_CHECKBOX_ARRAY,
-						'order' => 0,
 						'checkboxes' => array(// The definition of the checkboxes which are actually individual boolean suboptions. 
 								gettext('Suboption 2-a') => 'demo_theme_checkbox_array-suboption2-a', // this is the option db name, not the value!
 								gettext('Suboption 2-b') => 'demo_theme_checkbox_array-suboption2-b',
@@ -113,7 +112,6 @@ class ThemeOptions {
 				gettext('Checkbox list') => array(
 						'key' => 'demo_theme_checkbox_list',
 						'type' => OPTION_TYPE_CHECKBOX_UL,
-						'order' => 0,
 						'checkboxes' => array(// The definition of the checkboxes which are actually individual boolean suboptions. 
 								gettext('Suboption 3-a') => 'demo_theme_checkbox_list-suboption3-a', // this is the option db name, not the value!
 								gettext('Suboption 3-b') => 'demo_theme_checkbox_list-suboption3-b',
@@ -126,7 +124,6 @@ class ThemeOptions {
 				gettext('Allow search') => array(
 						'key' => 'Allow_search',
 						'type' => OPTION_TYPE_CHECKBOX,
-						'order' => 2,
 						'desc' => gettext('Check to enable search form.')),
 				/* 
 				 * Input text field option 
@@ -136,7 +133,6 @@ class ThemeOptions {
 						'type' => OPTION_TYPE_TEXTBOX,
 						'multilingual' => 1, // optional if the field should be multilingual if Zenphoto is run in that mode.
 						//Then there will be one input field per enabled language.
-						'order' => 9,
 						'desc' => gettext('Description')),
 				/* 
 				 * Password input field option 
@@ -144,7 +140,6 @@ class ThemeOptions {
 				gettext('Password input field option') => array(
 						'key' => 'demo_theme_input_password',
 						'type' => OPTION_TYPE_PASSWORD,
-						'order' => 9,
 						'desc' => gettext('Description')),
 				/* 
 				 * Cleartext option 
@@ -152,7 +147,6 @@ class ThemeOptions {
 				gettext('Cleartext input field option') => array(
 						'key' => 'demo_theme_input_cleartext',
 						'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 9,
 						'desc' => gettext('Description')),
 				/* 
 				 * Textareafield option 
@@ -163,7 +157,6 @@ class ThemeOptions {
 						'texteditor' => 1, // Optional: to enable the visual editor TinyMCE on this field.
 						'multilingual' => 1, // Optional: if the field should be multilingual if Zenphoto is run
 						//in that mode. Then there will be one textarea per enabled language.
-						'order' => 9,
 						'desc' => gettext('Description')),
 				/* 
 				 * Dropdown selector option 
@@ -171,7 +164,6 @@ class ThemeOptions {
 				gettext('Dropdown selector option') => array(
 						'key' => 'demo_theme_selector',
 						'type' => OPTION_TYPE_SELECTOR,
-						'order' => 1,
 						'selections' => array(// The definition of the selector values. You can of course have more than three.
 								gettext('Suboption1') => 'value-to-store',
 								gettext('Suboption2') => 'value-to-store',
@@ -203,7 +195,6 @@ class ThemeOptions {
 			$options['note'] = array(
 					'key' => 'demotheme_note',
 					'type' => OPTION_TYPE_NOTE,
-					'order' => 25,
 					'desc' => gettext('<p class="notebox">Sometimes you might want to put out notes for example this version of the demo theme expects that the <strong>adminToolbox</strong> is inserted via the <code>theme_body_close</code> <em>filter</em>.
 																Then there is an option type for notes only</p>') // the class 'notebox' is a standard class for styling notes on the backend, there is also 'errorbox' for errors.
 			);
