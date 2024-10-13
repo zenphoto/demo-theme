@@ -4,7 +4,6 @@
  */
 if (!defined('WEBPATH'))
 	die();
-if (class_exists('Zenpage')) { // Wrapper to cause a 404 error in case the Zenpage CMS plugin is not enabled as this theme page otherwise would throw errors
 	?>
 	<!DOCTYPE html>
 	<html>
@@ -13,7 +12,7 @@ if (class_exists('Zenpage')) { // Wrapper to cause a 404 error in case the Zenpa
 			<?php zp_apply_filter('theme_head'); ?>
 			<?php printHeadTitle(); ?>
 			<link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/style.css" type="text/css" />
-	<?php printZenpageRSSHeaderLink('Pages', '', 'Zenpage news', ''); ?>
+	<?php if (class_exists('RSS')) printRSSHeaderLink('Pages', '', 'Zenpage news', ''); ?>
 		</head>
 		<body>
 			<?php zp_apply_filter('theme_body_open'); ?>
@@ -26,7 +25,7 @@ if (class_exists('Zenpage')) { // Wrapper to cause a 404 error in case the Zenpa
 			printPageContent();
 			printTags('links', gettext('<strong>Tags:</strong>') . ' ', 'taglist', ', ');
 			printRSSLink('Gallery', '', 'RSS', ' | ');
-			printZenpageRSSLink('News', '', '', gettext('News'), '');
+			printRSSLink('News', '', '', gettext('News'), '');
 			//comment form plugin support
 			if (function_exists('printCommentForm')) {
 				printCommentForm();
@@ -35,7 +34,3 @@ if (class_exists('Zenpage')) { // Wrapper to cause a 404 error in case the Zenpa
 			?>
 		</body>
 	</html>
-	<?php
-} else {
-	include SERVERPATH . '/' . ZENFOLDER . '/404.php';
-}

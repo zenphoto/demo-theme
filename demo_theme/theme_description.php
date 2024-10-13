@@ -6,7 +6,7 @@
 /*
  * REQUIRED: The name of your plugin
  */
-$theme_description['name'] = 'Theme name'; 
+$theme_description['name'] = 'Demo theme'; 
 
 /*
  * OPTIONAL: The name(s) of the theme authors, myy containt HTML like author website links.
@@ -16,17 +16,17 @@ $theme_description['author'] = 'Author(s) name(s)';
 /*
  * OPTIONAL: The version number should follow semantic versioning like major.minor.patch
  */
-$theme_description['version'] = '1.0.0'; 
+$theme_description['version'] = '1.0.1'; 
 
 /*
  * OPTIONAL: Release date of the current version - preferredly yyyy-mm-dd format
  */
-$theme_description['date'] = '2020-07-03'; 
+$theme_description['date'] = '2024-10-13'; 
 
 /*
  * OPTIONAL: A description of your theme
  */
-$theme_description['desc'] = gettext('Short description of your theme');
+$theme_description['desc'] = gettext('This is the demo theme. Place here a short description of your theme.');
 
 /*
  * OPTIONAL: If the theme itself specifially (or some of its functionality) is deprecated note this here. It will be displayed on the backend (since 1.5.8b)
@@ -40,6 +40,9 @@ $theme_description['deprecated'] = gettext('Some message');
  * or be set to empty the plugin may be enabled.
  * You can also provide an array with serveral conditions (since 1.5.8b)
  */
+// Random vars as an example for the disable condition
+$something = 1;
+$somecondition = 2;
 $theme_description['disable'] = ($something != $somecondition) ? gettext('Message about the failed check') : false;
 
 /*

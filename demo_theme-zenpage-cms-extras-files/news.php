@@ -4,7 +4,6 @@
  */
 if (!defined('WEBPATH'))
 	die();
-if (class_exists('Zenpage')) { // Wrapper to cause a 404 error in case the Zenpage CMS plugin is not enabled as this theme page otherwise would throw errors
 	?>
 	<!DOCTYPE html>
 	<html>
@@ -12,7 +11,7 @@ if (class_exists('Zenpage')) { // Wrapper to cause a 404 error in case the Zenpa
 			<meta charset="<?php echo LOCAL_CHARSET; ?>">
 			<?php printHeadTitle(); ?>
 			<link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/style.css" type="text/css">
-			<?php printZenpageRSSHeaderLink('News', '', 'Zenpage news', ""); ?>
+			<?php if (class_exists('RSS')) printRSSHeaderLink('News', '', 'Zenpage news', ""); ?>
 	<?php zp_apply_filter('theme_head'); ?>
 		</head>
 		<body>
@@ -55,12 +54,7 @@ if (class_exists('Zenpage')) { // Wrapper to cause a 404 error in case the Zenpa
 				}
 				?>
 	<?php printRSSLink('Gallery', '', 'RSS', ' | '); ?>
-	<?php printZenpageRSSLink('News', '', '', gettext('News'), ''); ?>
+	<?php printRSSLink('News', '', '', gettext('News'), ''); ?>
 	<?php zp_apply_filter('theme_body_close'); ?>
 		</body>
 	</html>
-	<?php
-} else {
-	include SERVERPATH . '/' . ZENFOLDER . '/404.php';
-}
-
