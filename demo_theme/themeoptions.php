@@ -85,7 +85,7 @@ class ThemeOptions {
 				), // The description of the option.
 
 				/*
-				 * Checkbox list as an array 
+				 * A set of plain checkboxes
 				 * 
 				 * Note that the checkboxes are individual boolean options themselves that only store 0 and 1.
 				 * Therefore it is recommended to name the options accordingly. 
@@ -102,7 +102,7 @@ class ThemeOptions {
 						),
 						'desc' => gettext('Description')),
 				/* 
-				 * Checkbox list as an unordered html list
+				 * Checkbox list as an scrollable unordered html list
 				 * 
 				 * Note that the checkboxes are individual boolean options themselves that only store 0 and 1.
 				 * Therefore it is recommended to name the options accordingly. 
